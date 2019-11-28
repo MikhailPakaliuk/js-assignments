@@ -38,7 +38,7 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
-    throw new Error('Not implemented');
+    return value.length;
 }
 
 /**
@@ -223,7 +223,10 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    throw new Error('Not implemented');
+    function F(x){
+        return x+13>122?x-13:x>=97?x+13:x+13>90?x-13:x>=65?x+13:x;
+        }
+   return str.split('').map(i=>String.fromCharCode(F(i.charCodeAt()))).join('');
 }
 
 /**
