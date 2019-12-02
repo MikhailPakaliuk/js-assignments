@@ -111,10 +111,10 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-     const ab=getDistanceBetweenPoints(0, 0, x2, y2);
+    const ab=getDistanceBetweenPoints(0, 0, x2, y2);
     const bc=getDistanceBetweenPoints(0, 0, x1, y1);
     const ac=getDistanceBetweenPoints(x1, y1, x2, y2);
-    return Math.acos((ab*ab+bc*bc-ac*ac)/(2*ab*bc));
+    return Math.acos(0.5*(bc/ab+ab/bc-(ac**2).toFixed(15)/(ab*bc)));
 }
 
 /**
